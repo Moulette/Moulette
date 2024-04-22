@@ -1,11 +1,10 @@
-import React from "react";
 import PosterPicker from "../components/PosterPicker";
 import MenuPicker from "../components/MenuPicker";
 
-const RatingPage = (props) => {
+const RatingPage = () => {
   return (
-    <div className="flex flex-col justify-between items-center p-5">
-      <div>
+    <div className="flex min-h-full flex-col items-center justify-end p-5">
+      <div className="flex-1 flex">
         <PosterPicker />
       </div>
       <div className="">

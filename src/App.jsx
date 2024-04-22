@@ -8,20 +8,18 @@ function App() {
   const [profileDisplayed, setProfileDisplayed] = useState(false);
 
   return (
-    <>
-      <div className="size-full flex flex-col justify-start">
-        <div className="h-48">
-          <NavBar
-            profileDisplayed={profileDisplayed}
-            setProfileDisplayed={setProfileDisplayed}
-            loggedIn={setLoggedIn}
-          />
-        </div>
-        <div className="h-max">
-        {profileDisplayed ? <Profile /> : <RatingPage />}
-        </div>
+    <div className="flex flex-col h-screen">
+      <div className="h-28">
+        <NavBar
+          profileDisplayed={profileDisplayed}
+          setProfileDisplayed={setProfileDisplayed}
+          loggedIn={setLoggedIn}
+        />
       </div>
-    </>
+      <div className="flex-1">
+        {profileDisplayed ? <Profile /> : <RatingPage />}
+      </div>
+    </div>
   );
 }
 

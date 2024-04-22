@@ -1,6 +1,4 @@
-import React from 'react';
-
-const Profile = (props) => {
+const Profile = () => {
   return (
     <>
       <h1>User Section</h1>
