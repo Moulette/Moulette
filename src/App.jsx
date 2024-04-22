@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <NavBar profileDisplayed={profileDisplayed} loggedIn={setLoggedIn} />
+      <NavBar profileDisplayed={profileDisplayed} setProfileDisplayed={setProfileDisplayed} loggedIn={setLoggedIn} />
       {profileDisplayed ? <Profile /> : <RatingPage />}
     </>
   )
