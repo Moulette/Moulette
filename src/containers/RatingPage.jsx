@@ -1,17 +1,17 @@
-import React from 'react';
+import React from "react";
+import PosterPicker from "../components/PosterPicker";
+import MenuPicker from "../components/MenuPicker";
 
 const RatingPage = (props) => {
   return (
-    <>
-      <div>Movie Image</div>
+    <div className="flex flex-col justify-between items-center p-5">
       <div>
-        <ul>
-          <li>Don't watch</li>
-          <li>Already watched</li>
-          <li>Add to watch List</li>
-        </ul>
+        <PosterPicker />
       </div>
-    </>
+      <div className="">
+        <MenuPicker />
+      </div>
+    </div>
   );
 };
 
