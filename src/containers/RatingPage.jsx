@@ -88,6 +88,7 @@ const RatingPage = ({ currentUser }) => {
       <div className="flex flex-1">
         <PosterPicker
           currentMovies={currentMovies}
+          handleDontWatch={handleDontWatch}
           handleWatched={handleWatched}
           handleAddWatchList={handleAddWatchList}
         />
