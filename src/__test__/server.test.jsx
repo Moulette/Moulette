@@ -5,3 +5,10 @@
 // - individual components (functions or classes) should work
 // - it should retreive the movies by ID
 // - external dependencies (ex. tailwind)
+
+// describe('test', () => {
+//   it('sum', () => {
+//     expect(sum(1, 2)).toBe(3);
+//   });
+// });
+
