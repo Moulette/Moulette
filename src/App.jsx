@@ -5,7 +5,7 @@ import RatingPage from "./containers/RatingPage";
 import Login from "./components/Login";
 
 function App() {
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState('Ryan');
   const [profileDisplayed, setProfileDisplayed] = useState(false);
 
   let renderedComponent = <Login setCurrentUser={setCurrentUser} />;
