@@ -1,16 +1,14 @@
 import { useState } from "react";
 import UserHeader from '../components/UserHeader';
+import MovieList from '../components/MovieList';
 
 const Profile = () => {
   const [currentTab, setCurrentTab] = useState('Watch List');
 
-
-
   return (
-    <div className="flex flex-col justify-start p-10">
+    <div className="flex flex-col justify-start p-5">
       <UserHeader />
-      <h1>Tabbed Sections</h1>
-      <h1>Table Components</h1>
+      <MovieList />
     </div>
   );
 };
