@@ -1,4 +1,4 @@
-import db from './pgconnect';
+import db from './pgconnect.js';
 
 async function setupSchema() {
   try {
@@ -17,7 +17,7 @@ async function setupSchema() {
       );
 
       CREATE TABLE IF NOT EXISTS movies (
-        movie_id PRIMARY KEY,
+        movie_id VARCHAR PRIMARY KEY,
         title VARCHAR(255) NOT NULL,
         year VARCHAR(4),
         director VARCHAR(255)
@@ -27,7 +27,7 @@ async function setupSchema() {
       CREATE TABLE IF NOT EXISTS user_movies (
         user_movie_id SERIAL PRIMARY KEY,
         user_id INTEGER REFERENCES users(user_id),
-        movie_id INTEGER REFERENCES movies(movie_id),
+        movie_id VARCHAR REFERENCES movies(movie_id),
         status_id INTEGER REFERENCES status_types(status_id)
       );
     `);

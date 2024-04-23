@@ -1,4 +1,4 @@
-import db from './pgconnect';
+import db from './pgconnect.js';
 
 async function seedMovies() {
   const movies = [
@@ -21,5 +21,7 @@ async function seedMovies() {
     console.error('Error seeding movies:', error);
   }
 }
+
+seedMovies();
 
 export default seedMovies;
