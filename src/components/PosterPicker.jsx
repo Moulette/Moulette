@@ -1,10 +1,14 @@
-const PosterPicker = () => {
+import PosterImage from "./PosterImage";
+
+const PosterPicker = ({ currentMovies }) => {
   return (
     <div className="flex flex-col items-center justify-center">
-      <img
-        className="border-8 border-white bg-white p-2 rounded-md"
-        src="https://img.omdbapi.com/?i=tt0119698&h=600&apikey=61d58e1f"
-      />
+      <div className="relative">
+          <PosterImage movie={currentMovies[0]} top={true} />
+        <div className="absolute top-0">
+          <PosterImage movie={currentMovies[1]} />
+        </div>
+      </div>
     </div>
   );
 };
