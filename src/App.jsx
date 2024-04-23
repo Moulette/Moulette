@@ -13,7 +13,7 @@ function App() {
         <NavBar
           profileDisplayed={profileDisplayed}
           setProfileDisplayed={setProfileDisplayed}
-          loggedIn={setLoggedIn}
+          loggedIn={loggedIn}
         />
       </div>
       <div className="flex-1">

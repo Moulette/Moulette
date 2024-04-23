@@ -42,6 +42,18 @@ const MovieList = () => {
       year: 1988,
       listStatus: "Watched",
     },
+    {
+      poster: "https://img.omdbapi.com/?i=tt0119698&h=600&apikey=61d58e1f",
+      title: "Princess Mononoke",
+      year: 1997,
+      listStatus: "Watch List",
+    },
+    {
+      poster: "https://img.omdbapi.com/?i=tt0095016&h=600&apikey=61d58e1f",
+      title: "Die Hard",
+      year: 1988,
+      listStatus: "Watched",
+    },
   ];
 
   /**
@@ -65,7 +77,7 @@ const MovieList = () => {
   };
 
   return (
-    <div className="mt-5">
+    <div className="">
       <MovieListTabs currentTab={currentTab} toggleTab={toggleTab} />
       <div className="overflow-auto">{movieComponents}</div>
     </div>
