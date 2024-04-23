@@ -3,7 +3,7 @@ import xMark from "../assets/xMark.svg";
 
 const NavBar = ({ profileDisplayed, setProfileDisplayed, setLoggedIn }) => {
   return (
-    <div className="flex h-full w-full items-center justify-between bg-gray-300 p-2 px-10">
+    <div className="flex h-full w-full items-center justify-between bg-stone-300 p-2 px-10">
       <div className="">
         {/* Placeholder to keep three  */}
       </div>

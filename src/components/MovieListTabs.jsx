@@ -7,7 +7,7 @@ const MovieListTabs = ({ currentTab, toggleTab }) => {
             if (currentTab !== "Watch List") toggleTab();
           }}
           className={
-            (currentTab === "Watch List" ? "bg-gray-700 font-bold text-neutral-50" : "") +
+            (currentTab === "Watch List" ? "bg-stone-400 font-bold text-neutral-50" : "") +
             " p-3 text-center w-1/2"
           }
         >
@@ -18,14 +18,14 @@ const MovieListTabs = ({ currentTab, toggleTab }) => {
             if (currentTab !== "Watched") toggleTab();
           }}
           className={
-            (currentTab === "Watched" ? "bg-gray-700 font-bold text-neutral-50" : "") +
+            (currentTab === "Watched" ? "bg-stone-400 font-bold text-neutral-50" : "") +
             " p-3 text-center w-1/2"
           }
         >
           Watched
         </div>
       </div>
-      <hr className="border-2"/>
+      <hr className="border-2 border-stone-400"/>
     </div>
   );
 };
