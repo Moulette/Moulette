@@ -12,8 +12,11 @@ const PosterPicker = ({
   handleAddWatchList,
 }) => {
   const x = useMotionValue(0);
-  // If dragged more than 150px in any direction, fade to 0 in the next 50px
-  const opacity = useTransform(x, [-150, -100, 0, 100, 150], [0, 1, 1, 1, 0]);
+  // If dragged more 100 px in either direction, start to fade until 175px
+  const opacity = useTransform(x, [-175, -100, 0, 100, 175], [0, 1, 1, 1, 0]);
+  // As you drag, allow the card to rotate either direction
+  const rotate = useTransform(x, [-300, 300], [-50, 50]);
+  const translateY = useTransform(x, [-300, 0,  300], [-100, 0, -100]);
 
   return (
     <div className="flex flex-col items-center justify-center">
@@ -23,7 +26,7 @@ const PosterPicker = ({
           <motion.div
             drag="x"
             dragConstraints={{ left: -300, right: 300 }}
-            style={{ x, opacity }}
+            style={{ x, opacity, rotate, translateY }}
           >
             <PosterImage movie={currentMovies[1]} />
           </motion.div>
