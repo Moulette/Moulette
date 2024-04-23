@@ -6,7 +6,7 @@ import MenuPicker from "../components/MenuPicker";
  * Container that holds the screen for rating/picking movies. Can either be done with the poster
  * view or with a menue item set at the bottom of the page
  */
-const RatingPage = ({currentUser}) => {
+const RatingPage = ({ currentUser }) => {
   let tempMoviesDefinition = [
     {
       movieId: "tt0092067",
@@ -51,7 +51,9 @@ const RatingPage = ({currentUser}) => {
    */
   const handleDontWatch = async () => {
     // make a call to the API that updates status with userID and the current movie (index 1)
-    alert(`User ${currentUser} is not going to watch ${currentMovies[1].title}`);
+    alert(
+      `User ${currentUser} is not going to watch ${currentMovies[1].title}`,
+    );
 
     // call updateCurrentMovies
     updateCurrentMovies();
@@ -60,20 +62,42 @@ const RatingPage = ({currentUser}) => {
   /**
    * Function to handle that you already watched the current movie (add to watched)
    */
-  const handleWatched = () => {};
+  const handleWatched = () => {
+    // make a call to the API that updates status with userID and the current movie (index 1)
+    alert(`User ${currentUser} has already watched ${currentMovies[1].title}.`);
+
+    // call updateCurrentMovies
+    updateCurrentMovies();
+  };
 
   /**
    * Function to handle that you want to add the movie to your watch list
    */
-  const handleAddWatchList = () => {};
+  const handleAddWatchList = () => {
+    // make a call to the API that updates status with userID and the current movie (index 1)
+    alert(
+      `User ${currentUser} wants to add ${currentMovies[1].title} to their watch list.`,
+    );
+
+    // call updateCurrentMovies
+    updateCurrentMovies();
+  };
 
   return (
     <div className="flex min-h-full flex-col items-center justify-end p-5">
       <div className="flex flex-1">
-        <PosterPicker currentMovies={currentMovies} />
+        <PosterPicker
+          currentMovies={currentMovies}
+          handleWatched={handleWatched}
+          handleAddWatchList={handleAddWatchList}
+        />
       </div>
       <div className="">
-        <MenuPicker handleDontWatch={handleDontWatch}/>
+        <MenuPicker
+          handleDontWatch={handleDontWatch}
+          handleWatched={handleWatched}
+          handleAddWatchList={handleAddWatchList}
+        />
       </div>
     </div>
   );
