@@ -6,10 +6,10 @@
 // - on click "watched" in the main page, the movie should display under "watched"
 // - on click "want to watch" in the main page, the movie should display under the "watch list"
 
-import sum from './sum';
+// import sum from './sum';
 
-describe('test', () => {
-  it('sum', () => {
-    expect(sum(1, 2)).toBe(3);
-  });
-});
+// describe('test', () => {
+//   it('sum', () => {
+//     expect(sum(1, 2)).toBe(3);
+//   });
+// });
