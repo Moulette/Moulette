@@ -8,7 +8,7 @@ function App() {
   const [profileDisplayed, setProfileDisplayed] = useState(false);
 
   return (
-    <div className="flex flex-col h-screen bg-stone-100 overflow-y-auto">
+    <div className="flex flex-col h-screen bg-zinc-100 overflow-y-auto">
       <div className="">
         <NavBar
           profileDisplayed={profileDisplayed}

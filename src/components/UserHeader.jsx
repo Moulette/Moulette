@@ -1,6 +1,6 @@
 const UserHeader = () => {
   return (
-    <div className="flex min-w-full flex-row justify-start rounded-3xl bg-stone-200 p-5 shadow-lg">
+    <div className="flex min-w-full flex-row justify-start rounded-3xl bg-zinc-200 p-5 shadow-lg">
       <img
         className="h-28 w-28 rounded-full"
         src="https://media.licdn.com/dms/image/C5603AQH89aF7fDuxYQ/profile-displayphoto-shrink_800_800/0/1661982850851?e=1719446400&v=beta&t=3IH842Pn3N08WAz_LuQC5-X-JQtlfZxolMdA_C4Uu8M"
