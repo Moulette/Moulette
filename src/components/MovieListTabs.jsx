@@ -7,8 +7,9 @@ const MovieListTabs = ({ currentTab, toggleTab }) => {
             if (currentTab !== "Watch List") toggleTab();
           }}
           className={
-            (currentTab === "Watch List" ? "bg-stone-400 font-bold text-neutral-50" : "") +
-            " p-3 text-center w-1/2"
+            (currentTab === "Watch List"
+              ? "rounded-t-lg bg-stone-400 font-bold text-neutral-50"
+              : "") + " w-1/2 p-3 text-center"
           }
         >
           Watch List
@@ -18,14 +19,15 @@ const MovieListTabs = ({ currentTab, toggleTab }) => {
             if (currentTab !== "Watched") toggleTab();
           }}
           className={
-            (currentTab === "Watched" ? "bg-stone-400 font-bold text-neutral-50" : "") +
-            " p-3 text-center w-1/2"
+            (currentTab === "Watched"
+              ? "rounded-t-lg bg-stone-400 font-bold text-neutral-50"
+              : "") + " w-1/2 p-3 text-center"
           }
         >
           Watched
         </div>
       </div>
-      <hr className="border-2 border-stone-400"/>
+      <hr className="border-2 border-stone-400 shadow-md" />
     </div>
   );
 };

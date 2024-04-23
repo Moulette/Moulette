@@ -1,7 +1,10 @@
 const PosterPicker = () => {
   return (
     <div className="flex flex-col items-center justify-center">
-      <img src="https://img.omdbapi.com/?i=tt0119698&h=600&apikey=61d58e1f" />
+      <img
+        className="border-8 border-stone-200 bg-stone-200 p-2 rounded-md"
+        src="https://img.omdbapi.com/?i=tt0119698&h=600&apikey=61d58e1f"
+      />
     </div>
   );
 };
