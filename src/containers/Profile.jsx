@@ -1,9 +1,8 @@
-import { useState } from "react";
 import UserHeader from '../components/UserHeader';
 import MovieList from '../components/MovieList';
 
 const Profile = () => {
-  const [currentTab, setCurrentTab] = useState('Watch List');
+
 
   return (
     <div className="flex flex-col justify-start p-5">
