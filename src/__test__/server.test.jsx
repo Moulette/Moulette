@@ -6,9 +6,13 @@
 // - it should retreive the movies by ID
 // - external dependencies (ex. tailwind)
 
-// describe('test', () => {
-//   it('sum', () => {
-//     expect(sum(1, 2)).toBe(3);
-//   });
-// });
+const request = require("supertest");
+const app = require("../app");
 
+describe("GET /users", () => {
+  test("should return all users", async () => {
+    const response = await request(app).get("/users");
+    expect(response.status).toBe(200);
+  });
+});
+npm 
