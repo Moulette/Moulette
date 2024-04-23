@@ -1,4 +1,4 @@
-import db from './db/database.js';
+import db from './pgconnect.js';
 
 async function setupSchema() {
   try {
