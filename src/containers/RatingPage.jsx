@@ -6,7 +6,7 @@ import MenuPicker from "../components/MenuPicker";
  * Container that holds the screen for rating/picking movies. Can either be done with the poster
  * view or with a menue item set at the bottom of the page
  */
-const RatingPage = () => {
+const RatingPage = ({currentUser}) => {
   let tempMoviesDefinition = [
     {
       movieId: "tt0092067",
@@ -49,7 +49,13 @@ const RatingPage = () => {
   /**
    * Function to handle that you don't want to watch the current movie
    */
-  const handleDontWatch = () => {};
+  const handleDontWatch = async () => {
+    // make a call to the API that updates status with userID and the current movie (index 1)
+    alert(`User ${currentUser} is not going to watch ${currentMovies[1].title}`);
+
+    // call updateCurrentMovies
+    updateCurrentMovies();
+  };
 
   /**
    * Function to handle that you already watched the current movie (add to watched)
@@ -67,7 +73,7 @@ const RatingPage = () => {
         <PosterPicker currentMovies={currentMovies} />
       </div>
       <div className="">
-        <MenuPicker />
+        <MenuPicker handleDontWatch={handleDontWatch}/>
       </div>
     </div>
   );

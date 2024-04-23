@@ -10,12 +10,16 @@ function App() {
 
   let renderedComponent = <Login setCurrentUser={setCurrentUser} />;
 
-  if(currentUser !== null) {
-    renderedComponent = profileDisplayed ? <Profile /> : <RatingPage />;
+  if (currentUser !== null) {
+    renderedComponent = profileDisplayed ? (
+      <Profile currentUser={currentUser} />
+    ) : (
+      <RatingPage currentUser={currentUser} />
+    );
   }
 
   return (
-    <div className="flex flex-col h-screen bg-zinc-100 overflow-y-auto">
+    <div className="flex h-screen flex-col overflow-y-auto bg-zinc-100">
       <div className="">
         <NavBar
           profileDisplayed={profileDisplayed}
@@ -23,7 +27,7 @@ function App() {
           currentUser={currentUser}
         />
       </div>
-      <div className="flex-1 flex flex-col justify-center">
+      <div className="flex flex-1 flex-col justify-center">
         {renderedComponent}
       </div>
     </div>
