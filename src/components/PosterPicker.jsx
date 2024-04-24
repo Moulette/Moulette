@@ -32,8 +32,10 @@ const PosterPicker = ({
               // If moving to the left, call don't watch, otherwise add to watch.
               if (info.offset.x <= -150) {
                 handleDontWatch();
+                x.jump(0);
               } else if (info.offset.x >= 150) {
                 handleAddWatchList();
+                x.jump(0);
               }
             }}
           >
