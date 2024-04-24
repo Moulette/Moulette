@@ -6,7 +6,7 @@ import MenuPicker from "../components/MenuPicker";
 // Castle in the Sky	tt0092067
 // My Neighbor Totoro	tt0096283
 // Grave of the Fireflies	tt0095327
-// Kiki's Delivery Service	tt1620833
+// Kiki's Delivery Service	tt0097814
 // Only Yesterday	tt0102587
 // Porco Rosso	tt0104652
 // Ocean Waves	tt0108432
@@ -29,10 +29,8 @@ import MenuPicker from "../components/MenuPicker";
 // The Boy and the Heron	tt6587046
 
 const movieIds = [
-  "tt0092067",
-  "tt0096283",
   "tt0095327",
-  "tt1620833",
+  "tt0097814",
   "tt0102587",
   "tt0104652",
   "tt0108432",
