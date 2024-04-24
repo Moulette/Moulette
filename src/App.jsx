@@ -5,21 +5,8 @@ import RatingPage from "./containers/RatingPage";
 import Login from "./components/Login";
 
 function App() {
-  const [currentUser, setCurrentUser] = useState("Ryan");
+  const [currentUser, setCurrentUser] = useState(null);
   const [profileDisplayed, setProfileDisplayed] = useState(false);
-
-  // Essentially determines the default component that is rendered (login screen)
-  let renderedComponent = <Login setCurrentUser={setCurrentUser} />;
-
-  // If there is a user, then check to see if the profile is being displayed
-  // and display it, otherwise go to the rating component
-  if (currentUser !== null) {
-    renderedComponent = profileDisplayed ? (
-      <Profile currentUser={currentUser} />
-    ) : (
-      <RatingPage currentUser={currentUser} />
-    );
-  }
 
   return (
     <div className="flex h-screen flex-col overflow-y-auto bg-zinc-100">
@@ -31,7 +18,15 @@ function App() {
         />
       </div>
       <div className="flex flex-1 flex-col justify-start">
-        {renderedComponent}
+        <div className={currentUser === null ? 'flex flex-1 flex-col justify-start' : 'hidden'}>
+          <Login setCurrentUser={setCurrentUser} />
+        </div>
+        <div className={profileDisplayed && currentUser !== null ? 'flex flex-1 flex-col justify-start' : 'hidden'}>
+          <Profile currentUser={currentUser} />
+        </div>
+        <div className={!profileDisplayed && currentUser !== null ? 'flex flex-1 flex-col justify-start' : 'hidden'}>
+          <RatingPage currentUser={currentUser} />
+        </div>
       </div>
     </div>
   );
