@@ -139,7 +139,7 @@ const RatingPage = ({ currentUser }) => {
   };
 
   /**
-   * Function to handle that you want to add the movie to your watch list
+   * Function to handle that you want to add the movie to watch list
    */
   const handleAddWatchList = async () => {
     // make a call to the API that updates status with userID and the current movie (index 1)
