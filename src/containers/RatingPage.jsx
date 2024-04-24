@@ -6,7 +6,7 @@ import MenuPicker from "../components/MenuPicker";
 // Castle in the Sky	tt0092067
 // My Neighbor Totoro	tt0096283
 // Grave of the Fireflies	tt0095327
-// Kiki's Delivery Service	tt1620833
+// Kiki's Delivery Service	tt0097814
 // Only Yesterday	tt0102587
 // Porco Rosso	tt0104652
 // Ocean Waves	tt0108432
@@ -29,16 +29,13 @@ import MenuPicker from "../components/MenuPicker";
 // The Boy and the Heron	tt6587046
 
 const movieIds = [
-  "tt0092067",
-  "tt0096283",
   "tt0095327",
-  "tt1620833",
+  "tt0097814",
   "tt0102587",
   "tt0104652",
   "tt0108432",
   "tt0110008",
   "tt0113824",
-  "tt0119698",
   "tt0206013",
   "tt0245429",
   "tt0347618",
@@ -122,36 +119,36 @@ const RatingPage = ({ currentUser }) => {
    */
   const handleDontWatch = async () => {
     // make a call to the API that updates status with userID and the current movie (index 1)
-    alert(
+    console.log(
       `User ${currentUser} is not going to watch ${currentMovies[1].title}`,
     );
 
     // call updateCurrentMovies
-    updateCurrentMovies();
+    await updateCurrentMovies();
   };
 
   /**
    * Function to handle that you already watched the current movie (add to watched)
    */
-  const handleWatched = () => {
+  const handleWatched = async () => {
     // make a call to the API that updates status with userID and the current movie (index 1)
-    alert(`User ${currentUser} has already watched ${currentMovies[1].title}.`);
+    console.log(`User ${currentUser} has already watched ${currentMovies[1].title}.`);
 
     // call updateCurrentMovies
-    updateCurrentMovies();
+    await updateCurrentMovies();
   };
 
   /**
    * Function to handle that you want to add the movie to your watch list
    */
-  const handleAddWatchList = () => {
+  const handleAddWatchList = async () => {
     // make a call to the API that updates status with userID and the current movie (index 1)
-    alert(
+    console.log(
       `User ${currentUser} wants to add ${currentMovies[1].title} to their watch list.`,
     );
 
     // call updateCurrentMovies
-    updateCurrentMovies();
+    await updateCurrentMovies();
   };
 
   return (
@@ -159,6 +156,7 @@ const RatingPage = ({ currentUser }) => {
       <div className="flex flex-1">
         <PosterPicker
           currentMovies={currentMovies}
+          handleDontWatch={handleDontWatch}
           handleWatched={handleWatched}
           handleAddWatchList={handleAddWatchList}
         />

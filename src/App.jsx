@@ -5,18 +5,8 @@ import RatingPage from "./containers/RatingPage";
 import Login from "./components/Login";
 
 function App() {
-  const [currentUser, setCurrentUser] = useState("Ryan");
+  const [currentUser, setCurrentUser] = useState(null);
   const [profileDisplayed, setProfileDisplayed] = useState(false);
-
-  let renderedComponent = <Login setCurrentUser={setCurrentUser} />;
-
-  if (currentUser !== null) {
-    renderedComponent = profileDisplayed ? (
-      <Profile currentUser={currentUser} />
-    ) : (
-      <RatingPage currentUser={currentUser} />
-    );
-  }
 
   return (
     <div className="flex h-screen flex-col overflow-y-auto bg-zinc-100">
@@ -27,8 +17,16 @@ function App() {
           currentUser={currentUser}
         />
       </div>
-      <div className="flex flex-1 flex-col justify-center">
-        {renderedComponent}
+      <div className="flex flex-1 flex-col justify-start">
+        <div className={currentUser === null ? 'flex flex-1 flex-col justify-start' : 'hidden'}>
+          <Login setCurrentUser={setCurrentUser} />
+        </div>
+        <div className={profileDisplayed && currentUser !== null ? 'flex flex-1 flex-col justify-start' : 'hidden'}>
+          <Profile currentUser={currentUser} />
+        </div>
+        <div className={!profileDisplayed && currentUser !== null ? 'flex flex-1 flex-col justify-start' : 'hidden'}>
+          <RatingPage currentUser={currentUser} />
+        </div>
       </div>
     </div>
   );

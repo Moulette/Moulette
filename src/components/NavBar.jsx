@@ -1,6 +1,12 @@
 import avatar from "../assets/avatar.svg";
 import xMark from "../assets/xMark.svg";
 
+/**
+ * Component for the navbar at the top of the app. Controls if the profile is 
+ * displayed (but that is only possible if a user is logged in).
+ * @param {*} props - allows for setting a current user and controlling if the profile is displayed
+ * @returns
+ */
 const NavBar = ({ profileDisplayed, setProfileDisplayed, currentUser }) => {
   return (
     <div className="flex h-full w-full items-center justify-between bg-zinc-300 p-2 px-10">

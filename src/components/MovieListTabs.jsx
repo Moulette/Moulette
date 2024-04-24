@@ -1,3 +1,9 @@
+/**
+ * Renders the tabs in MovieList based on what is passed in as the current tab, and
+ * Allows for swapping of the tabs when the inactive one is tapped.
+ * @param {*} props - the current tab to highlight and a function to swap them
+ * @returns
+ */
 const MovieListTabs = ({ currentTab, toggleTab }) => {
   return (
     <div>

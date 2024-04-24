@@ -1,9 +1,19 @@
 import { useState } from "react";
 
+/**
+ * Component holds the form for entering a username and password, and logging in.
+ * For now to demo this functionality, it takes a setCurrentUser prop from its parent
+ * And will simply pass a string back into this function upon valid user
+ * @returns
+ */
 const Login = ({ setCurrentUser }) => {
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
 
+  /**
+   * Handles form submission. Right now just checks if is a hardcoded response
+   * @param {*} e - event
+   */
   const handleSubmit = (e) => {
     e.preventDefault();
     if (emailAddress === "ryan@codesmith.com" || password === "password") {
@@ -12,7 +22,7 @@ const Login = ({ setCurrentUser }) => {
   };
 
   return (
-    <div className="flex flex-col justify-center p-5">
+    <div className="mt-32 flex flex-col justify-center p-5">
       <div className="justify-self-start">
         <div className="mb-72">
           <form onSubmit={handleSubmit} method="POST" className="space-y-6">

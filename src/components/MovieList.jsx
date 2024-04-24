@@ -2,21 +2,22 @@ import { useState } from "react";
 import MovieListTabs from "./MovieListTabs";
 import MovieListItem from "./MovieListItem";
 
+/**
+ * Renders both a tabbed view of filtering movies and the actual movies corresponding
+ * with which tab is selcted.
+ * @returns 
+ */
 const MovieList = () => {
+  // Controlls both which tab is selected and which movies are filtered.
   const [currentTab, setCurrentTab] = useState("Watch List");
 
+  // Placeholder while we don't yet have more information.
   const movies = [
     {
-      poster: "https://img.omdbapi.com/?i=tt0119698&h=600&apikey=61d58e1f",
-      title: "Princess Mononoke",
-      year: 1997,
-      listStatus: "Watch List",
-    },
-    {
-      poster: "https://img.omdbapi.com/?i=tt0095016&h=600&apikey=61d58e1f",
-      title: "Die Hard",
+      poster: "https://img.omdbapi.com/?i=tt0096283&h=600&apikey=61d58e1f",
+      title: "My Neighbor Totoro",
       year: 1988,
-      listStatus: "Watched",
+      listStatus: "Watch List",
     },
     {
       poster: "https://img.omdbapi.com/?i=tt0119698&h=600&apikey=61d58e1f",
@@ -25,28 +26,10 @@ const MovieList = () => {
       listStatus: "Watch List",
     },
     {
-      poster: "https://img.omdbapi.com/?i=tt0095016&h=600&apikey=61d58e1f",
-      title: "Die Hard",
-      year: 1988,
+      poster: "https://img.omdbapi.com/?i=tt0092067&h=600&apikey=61d58e1f",
+      title: "Castle in the Sky",
+      year: 1986,
       listStatus: "Watched",
-    },
-    {
-      poster: "https://img.omdbapi.com/?i=tt0119698&h=600&apikey=61d58e1f",
-      title: "Princess Mononoke",
-      year: 1997,
-      listStatus: "Watch List",
-    },
-    {
-      poster: "https://img.omdbapi.com/?i=tt0095016&h=600&apikey=61d58e1f",
-      title: "Die Hard",
-      year: 1988,
-      listStatus: "Watched",
-    },
-    {
-      poster: "https://img.omdbapi.com/?i=tt0119698&h=600&apikey=61d58e1f",
-      title: "Princess Mononoke",
-      year: 1997,
-      listStatus: "Watch List",
     },
     {
       poster: "https://img.omdbapi.com/?i=tt0095016&h=600&apikey=61d58e1f",
