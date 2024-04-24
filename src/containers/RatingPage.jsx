@@ -51,7 +51,7 @@ const RatingPage = ({ currentUser }) => {
    */
   const handleDontWatch = async () => {
     // make a call to the API that updates status with userID and the current movie (index 1)
-    alert(
+    console.log(
       `User ${currentUser} is not going to watch ${currentMovies[1].title}`,
     );
 
@@ -64,7 +64,7 @@ const RatingPage = ({ currentUser }) => {
    */
   const handleWatched = () => {
     // make a call to the API that updates status with userID and the current movie (index 1)
-    alert(`User ${currentUser} has already watched ${currentMovies[1].title}.`);
+    console.log(`User ${currentUser} has already watched ${currentMovies[1].title}.`);
 
     // call updateCurrentMovies
     updateCurrentMovies();
@@ -75,7 +75,7 @@ const RatingPage = ({ currentUser }) => {
    */
   const handleAddWatchList = () => {
     // make a call to the API that updates status with userID and the current movie (index 1)
-    alert(
+    console.log(
       `User ${currentUser} wants to add ${currentMovies[1].title} to their watch list.`,
     );
 
