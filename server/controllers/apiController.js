@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 
 const apiController = {};
 
-const API_KEY = "61d58e1f"; // Your OMDB API key
+const API_KEY = "61d58e1f"; // OMDB API key
 
 apiController.getMovieById = async (req, res, next) => {
   try {
