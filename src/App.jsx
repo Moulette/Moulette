@@ -30,7 +30,7 @@ function App() {
           currentUser={currentUser}
         />
       </div>
-      <div className="flex flex-1 flex-col justify-center">
+      <div className="flex flex-1 flex-col justify-start">
         {renderedComponent}
       </div>
     </div>
