@@ -82,9 +82,6 @@ const RatingPage = ({ currentUser }) => {
   // State holding two movies, the first index is on top, the second index is behind
   const [currentMovies, setCurrentMovies] = useState(tempMoviesDefinition);
 
-
-
-
   /**
    * Helper function that moves the later of two movies to the front, and fetches a new movie for the back
    *
@@ -93,9 +90,9 @@ const RatingPage = ({ currentUser }) => {
   const updateCurrentMovies = async () => {
     try {
       const randomMovieId = getRandomMovieId();
-      const response = await fetch(
-        `api/${randomMovieId}`,
-      );
+      console.log('Going to fetch from the api endpoint');
+      const response = await fetch(`http://localhost:3000/api/${randomMovieId}`);
+      console.log('Fetched from the api endpoint, response is: ', response);
 
       // Check if the response is OK
       if (!response.ok) {
@@ -105,7 +102,7 @@ const RatingPage = ({ currentUser }) => {
       }
 
       const data = await response;
-      console.log(data);
+      console.log('Data body is: ', data.body);
       const newMovie = {
         movieId: randomMovieId,
         title: data.Title, // Ensure these keys match the API response
