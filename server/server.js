@@ -22,6 +22,9 @@ app.use("/api", movieRoutes);
 // app.use("/auth", authRoutes);
 // app.use("/list", listRoutes);
 
+// // Use the status routes
+// app.use('/api/status', statusRoutes);
+
 app.get('/', (req, res) => {
   res.send('Here is the Movie API server!')
 })
