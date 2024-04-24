@@ -1,7 +1,7 @@
 // server/controllers/listController.js
-const pool = require('../db');
+import pool from '../db';
 
-const listController = {
+export const listController = {
   getAllWishListedMovies: async (req, res, next) => {
     try {
       const result = await pool.query('SELECT * FROM want_to_watch');
@@ -33,5 +33,3 @@ const listController = {
     }
   }
 };
-
-module.exports = listController;

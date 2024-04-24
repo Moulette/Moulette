@@ -1,10 +1,10 @@
 // routes/list.js
-const express = require('express');
-const listController = require('../controllers/listController');
+import express from 'express';
+import { getAllWishListedMovies, getAllWatchedMovies, addMovieToWantToWatch } from '../controllers/listController';
 const router = express.Router();
 
-router.get('/wishlist', listController.getAllWishListedMovies);
-router.get('/watched', listController.getAllWatchedMovies);
-router.post('/wishlist', listController.addMovieToWantToWatch);
+router.get('/wishlist', getAllWishListedMovies);
+router.get('/watched', getAllWatchedMovies);
+router.post('/wishlist', addMovieToWantToWatch);
 
-module.exports = router;
+export default router;
