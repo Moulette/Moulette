@@ -91,7 +91,7 @@ const RatingPage = ({ currentUser }) => {
     try {
       const randomMovieId = getRandomMovieId();
       console.log('Going to fetch from the api endpoint');
-      const response = await fetch(`http://localhost:3000/api/${randomMovieId}`);
+      const response = await fetch(`http://localhost:4000/api/${randomMovieId}`);
       console.log('Fetched from the api endpoint, response is: ', response);
 
       // Check if the response is OK
@@ -101,7 +101,7 @@ const RatingPage = ({ currentUser }) => {
         );
       }
 
-      const data = await response;
+      const data = await response.json();
       console.log('Data body is: ', data.body);
       const newMovie = {
         movieId: randomMovieId,

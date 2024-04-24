@@ -3,7 +3,9 @@ import fetch from "node-fetch";
 
 const apiController = {};
 
-apiController.getMoviesById = async (req, res, next) => {
+const API_KEY = "61d58e1f"; // Your OMDB API key
+
+apiController.getMovieById = async (req, res, next) => {
   try {
     console.log("Inside apiController.getMoviesById");
     const { id } = req.params;

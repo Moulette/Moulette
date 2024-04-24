@@ -1,10 +1,10 @@
 // routes/api.js
 import express from "express";
 import fetch from "node-fetch";
-import apiController from "../controllers/apiController";
+import apiController from "../controllers/apiController.js";
 const router = express.Router();
 
-const API_KEY = "61d58e1f"; // Your OMDB API key
+console.log(apiController);
 
 // New route for fetching movie data by ID
 router.get(

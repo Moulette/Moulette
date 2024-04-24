@@ -1,14 +1,15 @@
 import express from "express";
-// import cors from "cors";
+import cors from "cors";
 import bodyParser from "body-parser";
 
 // Import routes
-import movieRoutes from "./routes/api";
-import authRoutes from "./routes/auth";
-import listRoutes from "./routes/list";
+import movieRoutes from "./routes/api.js";
+
+// import authRoutes from "./routes/auth";
+// import listRoutes from "./routes/list";
 
 const app = express();
-const PORT = 3000;
+const PORT = 4000;
 console.log('server starting');
 
 // Middleware
@@ -18,8 +19,12 @@ app.use(express.json());
 
 // Routes
 app.use("/api", movieRoutes);
-app.use("/auth", authRoutes);
-app.use("/list", listRoutes);
+// app.use("/auth", authRoutes);
+// app.use("/list", listRoutes);
+
+app.get('/', (req, res) => {
+  res.send('Here is the Movie API server!')
+})
 
 // Start the server
 app.listen(PORT, () => {
