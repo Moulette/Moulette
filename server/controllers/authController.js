@@ -1,7 +1,7 @@
 // server/controllers/authController.js
-const pool = require('../db');
+import pool from '../db';
 
-const authController = {
+export const authController = {
   checkCredentials: async (req, res, next) => {
     const { username, password } = req.body;
 
@@ -17,9 +17,7 @@ const authController = {
       }
     } catch (error) {
       console.error(error);
-      next(error); // Pass the error to the next middleware (possibly error handling middleware)
+      next(error);
     }
   }
 };
-
-module.exports = authController;

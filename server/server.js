@@ -1,33 +1,35 @@
-// server.js
-const express = require('express');
-const movieRoutes = require('./routes/api'); // Import the movie API routes
-const authRoutes = require('./routes/auth'); // Import the auth routes
-const listRoutes = require('./routes/list'); // Import the list routes
-import statusRoutes from './routes/status.js'; // Import the status routes
+import express from "express";
+import cors from "cors";
+import bodyParser from "body-parser";
+
+// Import routes
+import movieRoutes from "./routes/api.js";
+
+// import authRoutes from "./routes/auth";
+// import listRoutes from "./routes/list";
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 4000;
+console.log('server starting');
 
-// Middleware for parsing JSON bodies
+// Middleware
+app.use(cors());
 app.use(express.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
 
-// Use the movie API routes
-app.use('/movies', movieRoutes);
+// Routes
+app.use("/api", movieRoutes);
+// app.use("/auth", authRoutes);
+// app.use("/list", listRoutes);
 
-// Use the auth routes
-app.use('/auth', authRoutes);
+// // Use the status routes
+// app.use('/api/status', statusRoutes);
 
-// Use the list routes
-app.use('/list', listRoutes);
-
-// Use the status routes
-app.use('/api/status', statusRoutes);
-
-// Example route for other components
 app.get('/', (req, res) => {
-  res.send('Welcome to the Movie API Server!');
-});
+  res.send('Here is the Movie API server!')
+})
 
+// Start the server
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
