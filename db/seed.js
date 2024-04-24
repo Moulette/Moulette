@@ -43,4 +43,25 @@ async function seedMovies() {
 
 seedMovies();
 
-export default seedMovies;
+async function seedStatusTypes() {
+  const statuses = [
+    { status_name: 'watch_list' },
+    { status_name: 'watched' },
+    { status_name: 'not_interested' },
+  ];
+
+  try {
+    for (const status of statuses) {
+      await db.query('INSERT INTO status_types (status_name) VALUES ($1)', [
+        status.status_name,
+      ]);
+    }
+    console.log('Status types seeded successfully.');
+  } catch (error) {
+    console.error('Error seeding status types:', error);
+  }
+}
+
+seedStatusTypes();
+
+export { seedMovies, seedStatusTypes };
