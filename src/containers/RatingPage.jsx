@@ -36,7 +36,6 @@ const movieIds = [
   "tt0108432",
   "tt0110008",
   "tt0113824",
-  "tt0119698",
   "tt0206013",
   "tt0245429",
   "tt0347618",
@@ -125,31 +124,31 @@ const RatingPage = ({ currentUser }) => {
     );
 
     // call updateCurrentMovies
-    updateCurrentMovies();
+    await updateCurrentMovies();
   };
 
   /**
    * Function to handle that you already watched the current movie (add to watched)
    */
-  const handleWatched = () => {
+  const handleWatched = async () => {
     // make a call to the API that updates status with userID and the current movie (index 1)
     console.log(`User ${currentUser} has already watched ${currentMovies[1].title}.`);
 
     // call updateCurrentMovies
-    updateCurrentMovies();
+    await updateCurrentMovies();
   };
 
   /**
    * Function to handle that you want to add the movie to your watch list
    */
-  const handleAddWatchList = () => {
+  const handleAddWatchList = async () => {
     // make a call to the API that updates status with userID and the current movie (index 1)
     console.log(
       `User ${currentUser} wants to add ${currentMovies[1].title} to their watch list.`,
     );
 
     // call updateCurrentMovies
-    updateCurrentMovies();
+    await updateCurrentMovies();
   };
 
   return (
