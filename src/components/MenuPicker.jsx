@@ -2,6 +2,12 @@ import xMark from "../assets/xMark.svg";
 import film from "../assets/film.svg";
 import heart from "../assets/heart.svg";
 
+/**
+ * This component renders three buttons at the bottom of the rating screen
+ * And then processes the associated actions from the parent component.
+ * @param {*} props - used to handle each of the potential actions 
+ * @returns 
+ */
 const MenuPicker = ({ handleDontWatch, handleWatched, handleAddWatchList }) => {
   return (
     <>

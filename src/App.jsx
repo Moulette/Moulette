@@ -5,11 +5,14 @@ import RatingPage from "./containers/RatingPage";
 import Login from "./components/Login";
 
 function App() {
-  const [currentUser, setCurrentUser] = useState('Ryan');
+  const [currentUser, setCurrentUser] = useState(null);
   const [profileDisplayed, setProfileDisplayed] = useState(false);
 
+  // Essentially determines the default component that is rendered (login screen)
   let renderedComponent = <Login setCurrentUser={setCurrentUser} />;
 
+  // If there is a user, then check to see if the profile is being displayed
+  // and display it, otherwise go to the rating component
   if (currentUser !== null) {
     renderedComponent = profileDisplayed ? (
       <Profile currentUser={currentUser} />

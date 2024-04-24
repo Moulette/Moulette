@@ -1,4 +1,8 @@
-const PosterImage = ({ movie, top = false }) => {
+/**
+ * Component to render a single movie poster that is being rated.
+ * @param {*} params - the movie object which has an ID, title and year
+ */
+const PosterImage = ({ movie }) => {
   return (
     <div className="h-[28rem] w-auto">
       <img

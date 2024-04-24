@@ -2,9 +2,16 @@ import { useState } from "react";
 import MovieListTabs from "./MovieListTabs";
 import MovieListItem from "./MovieListItem";
 
+/**
+ * Renders both a tabbed view of filtering movies and the actual movies corresponding
+ * with which tab is selcted.
+ * @returns 
+ */
 const MovieList = () => {
+  // Controlls both which tab is selected and which movies are filtered.
   const [currentTab, setCurrentTab] = useState("Watch List");
 
+  // Placeholder while we don't yet have more information.
   const movies = [
     {
       poster: "https://img.omdbapi.com/?i=tt0119698&h=600&apikey=61d58e1f",

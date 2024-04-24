@@ -1,3 +1,6 @@
+/**
+ * Card that displays the current user of the app. Currently hardcoded to be Ryan.
+ */
 const UserHeader = () => {
   return (
     <div className="flex min-w-full flex-row justify-start rounded-3xl bg-white p-5 shadow-lg">

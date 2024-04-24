@@ -21,7 +21,7 @@ const PosterPicker = ({
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="relative">
-        <PosterImage movie={currentMovies[0]} top={true} />
+        <PosterImage movie={currentMovies[0]} />
         <div className="absolute top-0">
           <motion.div
             drag="x"
@@ -30,9 +30,9 @@ const PosterPicker = ({
             dragSnapToOrigin={true}
             onDragEnd={(event, info) => {
               // If moving to the left, call don't watch, otherwise add to watch.
-              if ( info.offset.x <= -150) {
+              if (info.offset.x <= -150) {
                 handleDontWatch();
-              } else if ( info.offset.x >= 150) {
+              } else if (info.offset.x >= 150) {
                 handleAddWatchList();
               }
             }}
